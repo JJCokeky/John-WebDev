@@ -10,6 +10,7 @@ html {
     text-align: center;
     font-size: 18px;
     border-radius: 15px;
+    background-color: blue;
 
     border: 5px solid black;
   }
