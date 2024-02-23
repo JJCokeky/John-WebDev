@@ -43,5 +43,42 @@
   }
   
   /* WRITE YOUR CODE BELOW HERE */
+  @font-face {
+    font-family: "Bitstream Vera Serif Bold";
+    src: url("https://mdn.github.io/css-examples/web-fonts/VeraSeBd.ttf");
+  }
 
-  
+  header { 
+    font-family: "Bitstream Vera Serif Bold", serif;
+    font-size: 2em;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  section {
+    font-family: "Bitstream Vera Serif Bold", serif;
+    text-indent: 20px;
+  }
+
+  aside {
+    font-family: "Bitstream Vera Serif Bold", serif;
+  }
+
+  body {
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 2px;
+    word-spacing: 1px;
+  }
+
+  a:hover {
+    color: #a66;
+    text-decoration: none;
+  }
+  a:focus {
+    color: #a66;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #a66;
+  }
