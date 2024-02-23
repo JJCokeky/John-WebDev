@@ -82,3 +82,14 @@
   a:visited {
     color: #a66;
   }
+
+li {
+  line-height: 13px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: list-item;
+  text-decoration: none;
+}
