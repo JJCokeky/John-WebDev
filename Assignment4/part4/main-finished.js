@@ -104,3 +104,19 @@ function loop() {
 }
 
 loop();
+
+// ------------------
+// new code here 
+// ------------------
+
+class Shape extends Ball{
+    constructor(x, y, velX, velY) 
+    {
+      this.x = x;
+      this.y = y;
+      this.velX = velX;
+      this.velY = velY;
+    }
+}
+
+// initialize its own color and size properties from the parameters it is given.
