@@ -109,7 +109,7 @@ loop();
 // new code here 
 // ------------------
 
-class Shape extends Ball{
+class Shape{
     constructor(x, y, velX, velY) 
     {
       this.x = x;
@@ -118,5 +118,17 @@ class Shape extends Ball{
       this.velY = velY;
     }
 }
+
+class Ball extends Shape {
+
+  constructor(x,y,velX,velY,color,size) {
+    super(x,y,velX,velY);
+
+    this.color = color;
+    this.size = size;
+  }
+  //The Ball constructor should define a new property called exists, which is used to track whether the balls exist in the program (have not been eaten by the evil circle). This should be a boolean (true/false), initialized to true in the constructor.
+}
+
 
 // initialize its own color and size properties from the parameters it is given.
