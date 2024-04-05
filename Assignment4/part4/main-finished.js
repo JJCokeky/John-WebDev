@@ -28,48 +28,6 @@ class Ball {
     this.color = color;
     this.size = size;
   }
-
-  draw() {
-    ctx.beginPath();
-    ctx.fillStyle = this.color;
-    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-    ctx.fill();
-  }
-
-  update() {
-    if (this.x + this.size >= width) {
-      this.velX = -Math.abs(this.velX);
-    }
-
-    if (this.x - this.size <= 0) {
-      this.velX = Math.abs(this.velX);
-    }
-
-    if (this.y + this.size >= height) {
-      this.velY = -Math.abs(this.velY);
-    }
-
-    if (this.y - this.size <= 0) {
-      this.velY = Math.abs(this.velY);
-    }
-
-    this.x += this.velX;
-    this.y += this.velY;
-  }
-
-  collisionDetect() {
-    for (const ball of balls) {
-      if (!(this === ball) && ball.exists) {
-        const dx = this.x - ball.x;
-        const dy = this.y - ball.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-  
-        if (distance < this.size + ball.size) {
-          ball.color = this.color = randomRGB();
-        }
-      }
-    }
-  }
 }
 
 const balls = [];
@@ -126,9 +84,50 @@ class Ball extends Shape {
 
     this.color = color;
     this.size = size;
+    this.exists = true
   }
-  //The Ball constructor should define a new property called exists, which is used to track whether the balls exist in the program (have not been eaten by the evil circle). This should be a boolean (true/false), initialized to true in the constructor.
+  draw() {
+    ctx.beginPath();
+    ctx.fillStyle = this.color;
+    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+
+  update() {
+    if (this.x + this.size >= width) {
+      this.velX = -Math.abs(this.velX);
+    }
+
+    if (this.x - this.size <= 0) {
+      this.velX = Math.abs(this.velX);
+    }
+
+    if (this.y + this.size >= height) {
+      this.velY = -Math.abs(this.velY);
+    }
+
+    if (this.y - this.size <= 0) {
+      this.velY = Math.abs(this.velY);
+    }
+
+    this.x += this.velX;
+    this.y += this.velY;
+  }
+
+}
+
+collisionDetect() {
+  for (const ball of balls) {
+    if (!(this === ball) && ball.exists) {
+      const dx = this.x - ball.x;
+      const dy = this.y - ball.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < this.size + ball.size) {
+        ball.color = this.color = randomRGB();
+      }
+    }
+  }
 }
 
 
-// initialize its own color and size properties from the parameters it is given.
